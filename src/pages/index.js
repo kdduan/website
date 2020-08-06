@@ -3,14 +3,6 @@ import Layout from '../components/Layout';
 import './index.styles.scss';
 import portfolioItems from '../components/portfolio-items';
 
-function handleClickMacro(e) {
-  if (e.target.className.includes('active')) {
-    e.target.className = 'folio-title';
-  } else {
-    e.target.className = 'folio-title active';
-  }
-}
-
 function handleClickSub(e) {
   if (e.target.className.includes('active')) {
     e.target.className = 'folio-title-sub';
