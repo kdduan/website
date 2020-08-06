@@ -8,8 +8,8 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Developer Name',
-    author: 'Martin Chammah',
+    title: 'Portfolio',
+    author: 'Kevin Duan',
     siteUrl: `https://www.martinchammah.dev`
   },
   /* Your site config here */
