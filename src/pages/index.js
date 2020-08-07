@@ -3,20 +3,51 @@ import Layout from '../components/Layout';
 import './index.styles.scss';
 import portfolioItems from '../components/portfolio-items';
 
+function handleClickMacro(e) {
+  const subCheckBoxes = document.getElementsByClassName("checkboxSub");
+  for (let i = 0; i < subCheckBoxes.length; i++) {
+    subCheckBoxes[i].checked = false;
+  }
+
+  const checkBoxes = document.getElementsByClassName("checkbox");
+  for (let i = 0; i < checkBoxes.length; i++) {
+    if (checkBoxes[i].id !== e.target.id) {    
+      checkBoxes[i].checked = false;
+    }
+  }
+
+  const allActive = document.getElementsByClassName("folio-title-sub active");
+  for (let i = 0; i < allActive.length; i++) {
+    allActive[i].className = 'folio-title-sub';
+  }
+}
+
 function handleClickSub(e) {
   if (e.target.className.includes('active')) {
     e.target.className = 'folio-title-sub';
   } else {
+    const checkBoxes = document.getElementsByClassName("checkboxSub");
+    for (let i = 0; i < checkBoxes.length; i++) {
+      if (checkBoxes[i].id !== e.target.id) {
+        checkBoxes[i].checked = false;
+      }
+    }
+    const allActive = document.getElementsByClassName("folio-title-sub active");
+    for (let i = 0; i < allActive.length; i++) {
+      allActive[i].className = 'folio-title-sub';
+    }
     e.target.className = 'folio-title-sub active';
   }
+
 }
 
 function renderFolio() {
   return  portfolioItems.map(({title, idx, desc}) => {
     return (
       <div key={'div' + idx} className="tab">
-        <input key={'index' + idx}  type="checkbox" id={idx + title}/>
-        <label key={'label' + idx}  className="tab-label" htmlFor={idx + title}>  <span key={'pTit' + idx} className='folio-title'>{title} </span>
+        <input key={'index' + idx}  type="checkbox" className="checkbox" id={idx + title}/>
+        <label key={'label' + idx}  className="tab-label" htmlFor={idx + title}>  
+          <span key={'pTit' + idx} className='folio-title' onClick={handleClickMacro}>{title} </span>
         </label>
         <div key={'tab' + idx} className="tab-content">
           {renderBullets(desc)}
@@ -30,9 +61,10 @@ function renderFolio() {
 function renderBullets(items) {
   return items.map(({title, desc, idx}) => {
     return (
-      <div key={'div' + idx} className="tab">
-        <input key={'index' + idx}  type="checkbox" id={idx + title}/>
-        <label key={'label' + idx}  className="tab-label-sub" htmlFor={idx + title}>  <span key={'pTit' + idx} className='folio-title-sub' id={title} onClick={handleClickSub}>{title} </span>
+      <div key={'div' + idx} className="tab-sub">
+        <input key={'index' + idx}  type="checkbox" className="checkboxSub" id={idx + title}/>
+        <label key={'label' + idx}  className="tab-label-sub" htmlFor={idx + title}>  
+          <span key={'pTit' + idx} className='folio-title-sub' id={idx + title} onClick={handleClickSub}>{title} </span>
         </label>
         <div key={'tab' + idx} className="tab-content-sub">
           {desc}

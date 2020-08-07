@@ -117,6 +117,63 @@ input {
   }
 }
 
+.tab-sub {
+  width: 100%;
+  color: black;
+  overflow: hidden;
+  font-size: .9rem;
+  img{
+    max-width:300px;
+}
+  &-label {
+    display: flex;
+    
+    &:hover {
+        background-color: transparent;
+    }
+    cursor: pointer;
+    /* Icon */
+    &::after {
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all .75s;
+    }
+  }
+  &-label-sub {
+    display: flex;
+    
+    &:hover {
+        color: cornflowerblue;
+    }
+    cursor: pointer;
+    /* Icon */
+    &::after {
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      transition: all .75s;
+    }
+  }
+  &-content {
+    max-height: 0;
+    background-color: transparent;
+    transition: all .35s;
+  }
+  &-content-sub {
+    max-height: 0;
+    background-color: transparent;
+    transition: all .35s;
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.75em;
+    cursor: pointer;
+  
+  }
+}
+
 // :checked
 input:checked {
   + .tab-label {
@@ -155,36 +212,4 @@ input:checked {
         text-decoration: none;
     }
 }
-}
-
-
-@media(max-width:800px) {
-
-    .folio-title {
-        
-        font-size: 0.9rem;
-      }
-
-      .folio-sinopsis {
-        font-size: 0.9rem;
-      }
-      
-    
-}
-
-
-
-@media(max-width:500px) {
-
-    .folio-title {
-        
-        font-size: 0.75rem;
-        padding-right: 1rem;
-      }
-
-      .folio-sinopsis {
-        font-size: 0.75rem;
-      }
-      
-    
 }
