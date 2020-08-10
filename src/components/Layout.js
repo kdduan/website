@@ -5,15 +5,20 @@ import Header from './Header';
 
 const Layout = (props) => {
 
-    return( 
-            <div>
-                <Header/>
-                <div className="content-main">
-                 {props.children}
-                </div>
-                <Footer/>
-            </div>
-    )
+  return( 
+    <html>
+      <head>
+        <title>Kevin Duan</title>
+      </head>
+      <div>
+        <Header/>
+        <div className="content-main">
+          {props.children}
+        </div>
+        <Footer/>
+      </div>
+    </html>
+  )
 }
 
 export default Layout
