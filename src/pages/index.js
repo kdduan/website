@@ -4,15 +4,14 @@ import './index.styles.scss';
 import portfolioItems from '../components/portfolio-items';
 
 function handleClickMacro(e) {
-  const subCheckBoxes = document.getElementsByClassName("checkboxSub");
-  for (let i = 0; i < subCheckBoxes.length; i++) {
-    subCheckBoxes[i].checked = false;
-  }
-
   const checkBoxes = document.getElementsByClassName("checkbox");
+  console.log(e.target.ie);
   for (let i = 0; i < checkBoxes.length; i++) {
     if (checkBoxes[i].id !== e.target.id) {    
       checkBoxes[i].checked = false;
+      console.log(checkBoxes[i], checkBoxes[i].checked);
+    } else {
+      console.log(checkBoxes[i].checked);
     }
   }
 
@@ -20,6 +19,12 @@ function handleClickMacro(e) {
   for (let i = 0; i < allActive.length; i++) {
     allActive[i].className = 'folio-title-sub';
   }
+
+  const subCheckBoxes = document.getElementsByClassName("checkboxSub");
+  for (let i = 0; i < subCheckBoxes.length; i++) {
+    subCheckBoxes[i].checked = false;
+  }
+
 }
 
 function handleClickSub(e) {
@@ -46,8 +51,8 @@ function renderFolio() {
     return (
       <div key={'div' + idx} className="tab">
         <input key={'index' + idx}  type="checkbox" className="checkbox" id={idx + title}/>
-        <label key={'label' + idx}  className="tab-label" htmlFor={idx + title}>  
-          <span key={'pTit' + idx} className='folio-title' onClick={handleClickMacro}>{title} </span>
+        <label key={'label' + idx}  className="tab-label" htmlFor={idx + title} >  
+          <span key={'pTit' + idx} className='folio-title' id={idx + title} onClick={handleClickMacro}>{title} </span>
         </label>
         <div key={'tab' + idx} className="tab-content">
           {renderBullets(desc)}

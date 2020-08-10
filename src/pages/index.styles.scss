@@ -10,6 +10,19 @@
     padding-bottom: 1.3rem;
 }
 
+.folio-title.active {
+  //font-weight: bold;
+  font-family: 'Anonymous Pro', monospace;
+  display: inline;
+  background-color: #C3F8FF;
+  font-size: 1.2rem;
+  margin: 0 0.5em 0.5em 0;
+}
+
+.folio-title:hover {
+  background-color: transparent;
+}
+
 .folio-title {
   //font-weight: bold;
   font-family: 'Anonymous Pro', monospace;
