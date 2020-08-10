@@ -56,7 +56,7 @@ const portfolioItems = [
       },
       {
         title: "What I'm currently working on",
-        desc: "Since I'm a full time student, I mainly keep busy with coursework or my responsibilities as the Quant Porfolio Manager for my school's Quantitative Finance Society. When I'm free, I enjoy keeping up with Philly sports teams, exploring new restaurants in the city, and coding. I'm also a grader for Professor Alan Siegel's Basic Algorithms course. Recently, I've begun exploring Reinforcement Learning in order to create a bot that can ascend the ladder on Pokemon Showdown, and I'm studying statistical theory in order to compete in more Kaggle Competitions and Datathons."
+        desc: "Since I'm a full time student, I mainly keep busy with coursework or my responsibilities as the Quant Porfolio Manager for my school's Quantitative Finance Society. I'm also a grader for Professor Alan Siegel's Basic Algorithms course. When I'm free, I enjoy keeping up with Philly sports teams, exploring new restaurants in the city, and coding. Recently, I've begun exploring Reinforcement Learning in order to create a bot that can ascend the ladder on Pokemon Showdown, and I'm studying statistical theory in order to compete in more Kaggle Competitions and Datathons."
       }
     ],
     idx: 3
